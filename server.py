@@ -434,3 +434,8 @@ async def websocket_endpoint(
     except Exception:
         if active_connections.get(username) is websocket:
             active_connections.pop(username, None)
+
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
